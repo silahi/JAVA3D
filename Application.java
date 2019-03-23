@@ -10,18 +10,18 @@ public class Application extends JFrame{
 	 private Canvas3D canvas         = null;
 	 private BranchGroup rootNode   = null;
 	 private static BoundingSphere region = new BoundingSphere(new Point3d(0,0,0) , 10000);
-     private Toolkit kit = Toolkit.getDefaultToolkit();
+     private static Toolkit kit = Toolkit.getDefaultToolkit();
      protected static int width = kit.getScreenSize().width;
      protected static int height = kit.getScreenSize().height;
-     private SceneConfig sceneConfig = null;
+     private Graphic_1 patience = null;
 	 public Application(){
          setSize(width , height);
          setLocationRelativeTo(null);
          setDefaultCloseOperation(EXIT_ON_CLOSE);
-         setIconImage(new ImageIcon("../ressources/ali.jpg").getImage());
-
-         sceneConfig = new SceneConfig();
-         sceneConfig.setVisible(true);
+         setIconImage(new ImageIcon("../ressources/ali.jpg").getImage()); 
+         
+         patience = new Graphic_1("Chargement de la Scene" ,this);
+         patience.setVisible(true);
          
          canvas = new Canvas3D(SimpleUniverse.getPreferredConfiguration());
          simpUniv = new SimpleUniverse(canvas);
@@ -31,6 +31,8 @@ public class Application extends JFrame{
          rootNode.compile();
          simpUniv.addBranchGraph(rootNode);
          add(canvas);
+
+
 
 	 }
 
