@@ -19,13 +19,17 @@ public class Apparence extends Appearance {
         texAtt = new TextureAttributes(
                           TextureAttributes.DECAL,
                       new Transform3D(),
-                      new Color4f(1f,1f,1f,0f),
+                      new Color4f(1f,1f,1f,0.5f),
                           TextureAttributes.NICEST);                                          
                                       
-             // setTextureAttributes(texAtt);
+              setTextureAttributes(texAtt);
               PolygonAttributes facettes = new PolygonAttributes(PolygonAttributes.POLYGON_FILL,0,0);                                 
               setPolygonAttributes(facettes);
-             // setTransparencyAttributes(new TransparencyAttributes(TransparencyAttributes.BLENDED, 0.5f));          
+             setTransparencyAttributes(new TransparencyAttributes(TransparencyAttributes.BLENDED, 0f));
+             TexCoordGeneration generator = new TexCoordGeneration(
+                                            TexCoordGeneration.EYE_LINEAR,
+                                            TexCoordGeneration.TEXTURE_COORDINATE_2);
+             setTexCoordGeneration(generator);                      
                                     
          try{                            
               TextureLoader loader = new TextureLoader(imageFile , canvas);

@@ -55,7 +55,7 @@ public class Application extends JFrame{
 
 	 private TransformGroup solGroup(){
 	 	Transform3D tr0 = new Transform3D();
-	 	tr0.setTranslation(new Vector3f(0,-20,-100));
+	 	tr0.setTranslation(new Vector3f(0,-100,-200));
         
         TransformGroup town = new TransformGroup(); 
         town.setCapability(TransformGroup.ALLOW_TRANSFORM_READ);
@@ -75,9 +75,9 @@ public class Application extends JFrame{
         };
 
         TexCoord2f[] texels = {
-        	new TexCoord2f(0,1),
-        	new TexCoord2f(0,1),
-        	new TexCoord2f(0,1),
+        	new TexCoord2f(0,0),
+        	new TexCoord2f(1,0),
+        	new TexCoord2f(1,1),
         	new TexCoord2f(0,1)
         };
 
@@ -114,9 +114,9 @@ public class Application extends JFrame{
         	new Point3f(-100f,0f,  -100f)
         };
          TexCoord2f[] texels = {
-        	new TexCoord2f(0,1),
-        	new TexCoord2f(0,1),
-        	new TexCoord2f(0,1),
+        	new TexCoord2f(0,0),
+        	new TexCoord2f(1,0),
+        	new TexCoord2f(1,1),
         	new TexCoord2f(0,1)
         };
 
@@ -135,9 +135,9 @@ public class Application extends JFrame{
         	new Point3f(100f,0f,  100f)
         };
          TexCoord2f[] texels = {
-        	new TexCoord2f(0,1),
-        	new TexCoord2f(0,1),
-        	new TexCoord2f(0,1),
+        	new TexCoord2f(0,0),
+        	new TexCoord2f(1,0),
+        	new TexCoord2f(1,1),
         	new TexCoord2f(0,1)
         };
 
@@ -156,9 +156,9 @@ public class Application extends JFrame{
         	new Point3f(-100f,50f,  100f)
         };
         TexCoord2f[] texels = {
-        	new TexCoord2f(0,1),
-        	new TexCoord2f(0,1),
-        	new TexCoord2f(0,1),
+        	new TexCoord2f(0,0),
+        	new TexCoord2f(1,0),
+        	new TexCoord2f(1,1),
         	new TexCoord2f(0,1)
         };
 
@@ -176,10 +176,10 @@ public class Application extends JFrame{
         	new Point3f(-100f,50f,100f),
         	new Point3f(-100f,0f,  100f)
         };
-         TexCoord2f[] texels = {
-        	new TexCoord2f(0,1),
-        	new TexCoord2f(0,1),
-        	new TexCoord2f(0,1),
+        TexCoord2f[] texels = {
+        	new TexCoord2f(0,0),
+        	new TexCoord2f(1,0),
+        	new TexCoord2f(1,1),
         	new TexCoord2f(0,1)
         };
 

@@ -26,10 +26,10 @@ public class Sol extends TransformGroup {
 
 	private Shape3D solShape(){
 		Shape3D shape = new Shape3D(); 
-		QuadArray plane = new QuadArray(4 , QuadArray.COORDINATES|QuadArray.TEXTURE_COORDINATE_2);         
+		QuadArray plane = new QuadArray(4 , QuadArray.COORDINATES|QuadArray.TEXTURE_COORDINATE_2| QuadArray.COLOR_3);         
         plane.setCoordinates(0 ,point);
         plane.setTextureCoordinates(0 ,0 , tex);
-               
+        plane.setColors( 0, new Color3f[]{color});       
         shape.setGeometry(plane);
 		shape.setAppearance(app);
 		return shape;
