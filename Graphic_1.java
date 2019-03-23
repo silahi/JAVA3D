@@ -42,7 +42,7 @@ public class Graphic_1 extends JFrame{
         setAlwaysOnTop(true);
         setLocationRelativeTo(null);
         getContentPane().setBackground(Color.BLACK);
-        setIconImage(new ImageIcon("pictures/ali.jpg").getImage());
+        setIconImage(new ImageIcon("../ressources/Fond.jpg").getImage());
         setUndecorated(true);
         setBackground(new Color(0,0,0, 150)); 
 

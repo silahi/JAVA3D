@@ -19,8 +19,7 @@ public class Transparence extends JFrame{
         setSize(800 , 500);
         setDefaultCloseOperation(EXIT_ON_CLOSE);
         setLocationRelativeTo(null);
-        color = new Color(0,0,0);
-        setExtendedState(MAXIMIZED_BOTH);
+        color = new Color(0,0,0); 
         setUndecorated(true);
         setBackground(new Color(0,0,0,alpha));
         getContentPane().setBackground(color);
