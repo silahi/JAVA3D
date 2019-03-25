@@ -4,7 +4,7 @@ import javax.media.j3d.*;
 import javax.vecmath.*;
 
 public class House {
-   public static final float VERTEX_COUNT = 4;
+   public static final int VERTEX_COUNT = 4;
    public static final int BOTTOM = 0;
    public static final int TOP    = 1;   
    public static final int RIGHT  = 2;
@@ -91,25 +91,24 @@ public class House {
              face.setCoordinate(2 , point);
              point.set(-x,y,z);
              face.setCoordinate(3 , point);
-          }   
-   } // End of creating faces
+          } 
 
-    // Mose  s and t 
+          return null;  
+   } 
+
+    // Mode  s and t 
    public void setTextureFaceCoord(QuadArray face , float s , float t){
           TexCoord2f texCoord = new TexCoord2f();
-          texCoord.set(0 ,t);
-          face.setTextureCoordinate(0 , 0 , texCoord);
-
-          TexCoord2f texCoord = new TexCoord2f();
           texCoord.set(0 ,0);
+          face.setTextureCoordinate(0 , 0 , texCoord);
+          
+          texCoord.set(1 ,0);
           face.setTextureCoordinate(0 , 1 , texCoord);
-
-          TexCoord2f texCoord = new TexCoord2f();
-          texCoord.set(s ,0);
+           
+          texCoord.set(1 ,1);
           face.setTextureCoordinate(0 , 2 , texCoord);
-
-          TexCoord2f texCoord = new TexCoord2f();
-          texCoord.set(s ,t);
+           
+          texCoord.set(0 ,1);
           face.setTextureCoordinate(0 , 3 , texCoord);
    }
 	    
