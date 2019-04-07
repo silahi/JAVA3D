@@ -178,7 +178,7 @@ public class House {
             // Forme cubique
            else if(faceValue == CHKOMBE) {  
             // back
-             y = 0.2f;
+             y = (float)0.2/3;
              point.set(x,0,z);
              face.setCoordinate(0 , point);
              point.set(x,y,z);
@@ -256,26 +256,25 @@ public class House {
     */ 
    
    public void setTextureFaceCoord(QuadArray quad , int vertexCount){
-            TexCoord2f texCoord = new TexCoord2f();
+           // TexCoord2f texCoord = new TexCoord2f();
+           Point2f texCoord = new Point2f();
             int numberOfFace = vertexCount/4; 
             int vertexPoint = 0;
           for(int i = 0 ; i< numberOfFace ; i += 4){
               vertexPoint = i;
-              texCoord.set(-1.0f ,1.5f);
-              quad.setTextureCoordinate(0 , vertexPoint , texCoord);
+              texCoord.set(0f ,0f); //-1 1.5
+              quad.setTextureCoordinate( vertexPoint , texCoord);
               
-              texCoord.set(-1f ,-1f);
-              quad.setTextureCoordinate(0 , vertexPoint+1 , texCoord);
+              texCoord.set(1f ,0f); // -1 -1
+              quad.setTextureCoordinate( vertexPoint+1 , texCoord);
                
-              texCoord.set(1.5f ,-1);
-              quad.setTextureCoordinate(0 , vertexPoint+2 , texCoord);
+              texCoord.set(1f ,1); // -1 -1
+              quad.setTextureCoordinate( vertexPoint+2 , texCoord);
                
-              texCoord.set(1.5f ,1.5f);
-              quad.setTextureCoordinate(0 , vertexPoint+3 , texCoord);
+              texCoord.set(0f ,1f); // 1.5 1.5
+              quad.setTextureCoordinate( vertexPoint+3 , texCoord);
           }
-
    }
-
     
 	    
 }

@@ -3,12 +3,15 @@ import javax.swing.*;
 import java.awt.*;
 
 public class Building extends JPanel{
-	private JButton build = null;
+	protected JButton build = null;
+  private   JButton house = null;
+   
 
 	public Building (String title){
           build = new ButtonModel(title);
           setOpaque(false);
           add(build);
+
 	}
 
 	protected class ButtonModel extends JButton{

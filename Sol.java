@@ -12,7 +12,7 @@ public class Sol extends TransformGroup {
     protected Color3f color;
 	public Sol(Point3f[] point , TexCoord2f[] tex , Color3f color ,String image ,Canvas3D canvas){
 		  this.point = point;
-		  this.tex = tex;
+		  this.tex   = tex;
 		  this.color = color;
 		  setCapability(ALLOW_TRANSFORM_WRITE);
           setCapability(ALLOW_TRANSFORM_READ);

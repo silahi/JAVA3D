@@ -7,8 +7,7 @@ public class AutoRotate extends TransformGroup {
 	protected Alpha alpha = null;
 	protected Transform3D axe = null;
 	protected RotationInterpolator rotator = null;
-     public AutoRotate(){
-          
+     public AutoRotate(){          
           setCapability(ALLOW_TRANSFORM_WRITE);
           setCapability(ALLOW_TRANSFORM_READ);
           
@@ -17,6 +16,5 @@ public class AutoRotate extends TransformGroup {
           rotator = new RotationInterpolator(alpha , this);
           rotator.setSchedulingBounds(Application.region);
           addChild(rotator);
-
      }
 }

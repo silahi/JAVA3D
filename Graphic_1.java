@@ -39,7 +39,7 @@ public class Graphic_1 extends JFrame{
         this.canvas = canvas;
         setSize(Application.width/2 , Application.height /2);
         setDefaultCloseOperation(EXIT_ON_CLOSE);
-        setAlwaysOnTop(true);
+        setAlwaysOnTop(false);
         setLocationRelativeTo(null);
         getContentPane().setBackground(Color.BLACK);
         setIconImage(new ImageIcon("../ressources/Fond.jpg").getImage());
