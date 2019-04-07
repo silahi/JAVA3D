@@ -1,8 +1,5 @@
 
-import javax.media.j3d.*;
-import javax.vecmath.*;
-import com.sun.j3d.utils.behaviors.keyboard.*;
-import com.sun.j3d.utils.behaviors.mouse.*;
+import javax.media.j3d.TransformGroup;  
 
 public class Town extends TransformGroup {
 	 protected TransformGroup townGroup ;	 

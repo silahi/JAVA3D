@@ -37,10 +37,7 @@ public class Application extends JFrame{
          townGraph = sceneGraph();
          townGraph.compile();
          simpUniv.addBranchGraph(townGraph);
-         add(canvas);
-
-        // SceneConfig sc = new SceneConfig();
-       //  sc.setVisible(true); 
+         add(canvas); 
 	 }
 
 	 private BranchGroup sceneGraph(){
@@ -48,81 +45,17 @@ public class Application extends JFrame{
         position.setTranslation(new Vector3f(0,-10,-50));
         TransformGroup home = new TransformGroup();  
 	 	BranchGroup  root = new BranchGroup(); 
-	 	  
-         // Haie de devant
-        TransformGroup fH = frontHedge();
-        // Haie de droite
-      
-        // Haie de droite
-        TransformGroup lH = leftHedge();
-         // Haie de derière
-        TransformGroup bH = backHedge(); 
-        
-            TransformGroup rH = rightHedge();
-            home.addChild(rH);
-        home.addChild(earth()); 
-
-	 	// Ajout des composants
-         
-        home.addChild(fH);       
-        home.addChild(lH);
-        home.addChild(bH); 
-
-        // création et ajout des Maisons 
-        
-        AlignHouse a1 = new AlignHouse(new Maison(2,2) , new Vector3f(0f,0f,-3f)); 
-        AlignHouse[] houses = {a1 };
-        for(AlignHouse ah : houses){
-        	home.addChild(ah);
-        }        
-
+        House house = new House(3,3 ,3);
+        home.addChild(house.houseGroup);
         Town city = new Town();       
         city.townGroup.addChild(home);
         city.setTransform(position);
         root.addChild(city);
 	 	return root;
-	 }
-
-	    private TransformGroup earth(){
-	    	Face sol = new Face("green.jpg" , canvas , Face.BOTTOM , x,y,z); 
-	    	TransformGroup tg = sol.faceGroup;
-	    	return tg;
-	    }    
-     
-      
-      // Construction de la haie de devant
-	 private  TransformGroup frontHedge(){	 	
-	    Face sol = new Face("w11_cop.jpg" , canvas , Face.FRONT , x,y,z); 
-	    TransformGroup tg = sol.faceGroup;		 
-	 	return tg;
 	 } 
 
-	   //  Construction de la haie de droite
-	 private  TransformGroup rightHedge(){
-	    Face sol = new Face("w11_cop.jpg" , canvas , Face.RIGHT , x,y,z); 
-	 	TransformGroup tg = sol.faceGroup;	 		 
-        
-	 	return tg;
-	 } 
-
-	  //  Construction de la haie de gauche
-	 private  TransformGroup leftHedge(){
-	    Face sol = new Face("w11_cop.jpg" , canvas , Face.LEFT , x,y,z); 
-	 	TransformGroup tg = sol.faceGroup;	 		 
-        
-	 	return tg;
-	 }  
-
-	  //  Construction de la haie de derière
-	 private  TransformGroup backHedge(){
-	 	    Face sol = new Face("w11.jpg" , canvas , Face.BACK ,x,y,z);	 
-	 	    TransformGroup tg = sol.faceGroup;	 
-	 	return tg;
-	 } 
-
-
-	 public static void main(String[] args) {
-	 	Application application = new Application();
-	 	application.setVisible(true);
-	 }
+     public static void main(String[] args) {
+         Application application = new Application();
+         application.setVisible(true);
+     }
 }
